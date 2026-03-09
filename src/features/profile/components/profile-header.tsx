@@ -13,25 +13,25 @@ export function ProfileHeader() {
         <div className="mx-[2px] my-[3px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="size-32 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40"
+            className="size-32 rounded-full object-cover object-center ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40"
             alt={`${USER.displayName}'s avatar`}
             src={USER.avatar}
             fetchPriority="high"
           />
         </div>
 
-        <SimpleTooltip content="I'm from Việt Nam">
-          {/* Flag of Viet Nam */}
+        <SimpleTooltip content="I'm from India">
+          {/* Flag of India - tricolor with Ashoka Chakra */}
           <svg
             className="absolute top-0 -left-px h-8 sm:h-9"
             viewBox="0 0 30 20"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <rect width="30" height="20" fill="#F00" />
-            <polygon
-              points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85"
-              fill="#FFEB00"
-            />
+            <rect width="30" height="20" fill="#FF9933" />
+            <rect y="6.67" width="30" height="6.67" fill="#fff" />
+            <rect y="13.33" width="30" height="6.67" fill="#138808" />
+            <circle cx="15" cy="10" r="2.8" fill="#000080" />
+            <circle cx="15" cy="10" r="1.8" fill="#fff" />
           </svg>
         </SimpleTooltip>
       </div>

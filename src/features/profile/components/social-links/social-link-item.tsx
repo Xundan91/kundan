@@ -1,10 +1,20 @@
 import { ArrowUpRightIcon } from "lucide-react";
 import Image from "next/image";
 
+import { Icons } from "@/components/icons";
 import type { SocialLink } from "@/features/profile/types/social-links";
 import { cn } from "@/lib/utils";
 
-export function SocialLinkItem({ icon, title, description, href }: SocialLink) {
+export function SocialLinkItem({
+  iconName,
+  icon,
+  title,
+  description,
+  href,
+}: SocialLink) {
+  const IconComponent =
+    iconName && iconName in Icons ? Icons[iconName as keyof typeof Icons] : null;
+
   return (
     <a
       className={cn(
@@ -16,28 +26,26 @@ export function SocialLinkItem({ icon, title, description, href }: SocialLink) {
       target="_blank"
       rel="noopener"
     >
-      {/* <div className="relative size-12 shrink-0">
-        <Image
-          className="rounded-xl"
-          src={icon}
-          alt={title}
-          width={48}
-          height={48}
-          quality={100}
-          unoptimized
-        />
-        <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-black/8 ring-inset dark:ring-white/8" />
-      </div> */}
-
-      <Image
-        className="shrink-0"
-        src={icon}
-        alt={title}
-        width={48}
-        height={48}
-        quality={100}
-        unoptimized
-      />
+      <div
+        className={cn(
+          "flex size-12 shrink-0 items-center justify-center text-foreground",
+          "[&_svg]:size-12"
+        )}
+        aria-hidden
+      >
+        {IconComponent ? (
+          <IconComponent />
+        ) : icon ? (
+          <Image
+            src={icon}
+            alt={title}
+            width={48}
+            height={48}
+            quality={100}
+            unoptimized
+          />
+        ) : null}
+      </div>
 
       <div className="flex-1">
         <h3 className="flex items-center font-medium underline-offset-4 group-hover/link:underline">

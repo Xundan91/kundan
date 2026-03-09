@@ -3,7 +3,7 @@
   "name": "work-experience",
   "type": "registry:component",
   "title": "Work Experience",
-  "author": "ncdai <dai@chanhdai.com>",
+  "author": "ncdai <dai@kundan.com>",
   "description": "Displays a list of work experiences with role details and durations.",
   "dependencies": [
     "react-markdown",
@@ -41,5 +41,5 @@
   "css": {
     "@plugin @tailwindcss/typography": {}
   },
-  "docs": "https://chanhdai.com/components/work-experience-component"
+  "docs": "https://kundan.com/components/work-experience-component"
 }

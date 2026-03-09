@@ -1,26 +1,26 @@
-# [chanhdai.com](https://chanhdai.com)
+# [kundan.com](https://kundan.com)
 
 A minimal portfolio, component registry, and blog to showcase my work as a Design Engineer.
 
-Check out the live site: [chanhdai.com](https://chanhdai.com)
+Check out the live site: [kundan.com](https://kundan.com)
 
-<!-- <a href="https://frogdr.com/chanhdai.com?via=ncdai&utm_source=chanhdai.com">
+<!-- <a href="https://frogdr.com/kundan.com?via=ncdai&utm_source=kundan.com">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://frogdr.com/chanhdai.com/badge-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://frogdr.com/chanhdai.com/badge-white.svg">
-    <img src="https://frogdr.com/chanhdai.com/badge-white.svg" alt="Monitor your Domain Rating" style="width: auto; height: 40px">
+    <source media="(prefers-color-scheme: dark)" srcset="https://frogdr.com/kundan.com/badge-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://frogdr.com/kundan.com/badge-white.svg">
+    <img src="https://frogdr.com/kundan.com/badge-white.svg" alt="Monitor your Domain Rating" style="width: auto; height: 40px">
   </picture>
 </a> -->
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://assets.chanhdai.com/images/screenshot-desktop-dark.webp?t=1758274686">
-  <source media="(prefers-color-scheme: light)" srcset="https://assets.chanhdai.com/images/screenshot-desktop-light.webp?t=1758274686">
-  <img src="https://assets.chanhdai.com/images/screenshot-desktop-light.webp?t=1758274686" alt="Screenshot">
+  <source media="(prefers-color-scheme: dark)" srcset="https://assets.kundan.com/images/screenshot-desktop-dark.webp?t=1758274686">
+  <source media="(prefers-color-scheme: light)" srcset="https://assets.kundan.com/images/screenshot-desktop-light.webp?t=1758274686">
+  <img src="https://assets.kundan.com/images/screenshot-desktop-light.webp?t=1758274686" alt="Screenshot">
 </picture>
 
 ## GitAds Sponsored
 
-[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=ncdai/chanhdai.com@github)](https://gitads.dev/v1/ad-track?source=ncdai/chanhdai.com@github)
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=ncdai/kundan.com@github)](https://gitads.dev/v1/ad-track?source=ncdai/kundan.com@github)
 
 <!-- GitAds-Verify: QICCAB4PFWV9MHUGPGPN5B2I8SAXLAOK -->
 
@@ -73,7 +73,7 @@ You're free to use my code! Just make sure to <ins>remove all my personal inform
 
 ## Star History
 
-[![Star History](https://starchart.cc/ncdai/chanhdai.com.svg?variant=adaptive)](https://starchart.cc/ncdai/chanhdai.com)
+[![Star History](https://starchart.cc/ncdai/kundan.com.svg?variant=adaptive)](https://starchart.cc/ncdai/kundan.com)
 
 ## Acknowledgments
 

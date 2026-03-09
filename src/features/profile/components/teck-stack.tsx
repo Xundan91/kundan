@@ -7,6 +7,17 @@ import { cn } from "@/lib/utils";
 import { TECH_STACK } from "../data/tech-stack";
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel";
 
+const SIMPLE_ICONS_CDN = "https://cdn.simpleicons.org";
+
+/** Colorful brand icons (no color param = default brand colors from Simple Icons). */
+function getTechIconSrc(tech: (typeof TECH_STACK)[number]) {
+  const slug = tech.iconSlug;
+  if (slug) {
+    return `${SIMPLE_ICONS_CDN}/${slug}`;
+  }
+  return "";
+}
+
 export function TeckStack() {
   return (
     <Panel id="stack">
@@ -22,7 +33,9 @@ export function TeckStack() {
         )}
       >
         <ul className="flex flex-wrap gap-4 select-none">
-          {TECH_STACK.map((tech) => {
+          {TECH_STACK.filter((tech) => tech.iconSlug).map((tech) => {
+            const src = getTechIconSrc(tech);
+            if (!src) return null;
             return (
               <li key={tech.key} className="flex">
                 <SimpleTooltip content={tech.title}>
@@ -32,34 +45,13 @@ export function TeckStack() {
                     rel="noopener noreferrer"
                     aria-label={tech.title}
                   >
-                    {tech.theme ? (
-                      <>
-                        <Image
-                          src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-light.svg`}
-                          alt={`${tech.title} light icon`}
-                          width={32}
-                          height={32}
-                          className="hidden [html.light_&]:block"
-                          unoptimized
-                        />
-                        <Image
-                          src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-dark.svg`}
-                          alt={`${tech.title} dark icon`}
-                          width={32}
-                          height={32}
-                          className="hidden [html.dark_&]:block"
-                          unoptimized
-                        />
-                      </>
-                    ) : (
-                      <Image
-                        src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}.svg`}
-                        alt={`${tech.title} icon`}
-                        width={32}
-                        height={32}
-                        unoptimized
-                      />
-                    )}
+                    <Image
+                      src={src}
+                      alt={`${tech.title} icon`}
+                      width={32}
+                      height={32}
+                      unoptimized
+                    />
                     <span className="sr-only">{tech.title}</span>
                   </a>
                 </SimpleTooltip>

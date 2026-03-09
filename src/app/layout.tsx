@@ -40,18 +40,18 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: {
-    template: `%s – ${SITE_INFO.name}`,
-    default: `${USER.displayName} – ${USER.jobTitle}`,
+    template: `%s – Portfolio`,
+    default: "Portfolio",
   },
   description: SITE_INFO.description,
   keywords: SITE_INFO.keywords,
   authors: [
     {
-      name: "ncdai",
+      name: "Kundan Kumar",
       url: SITE_INFO.url,
     },
   ],
-  creator: "ncdai",
+  creator: "Kundan Kumar",
   openGraph: {
     siteName: SITE_INFO.name,
     url: "/",
@@ -71,25 +71,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    creator: "@iamncdai", // Twitter username
+    creator: "@kundan_singh91",
     images: [SITE_INFO.ogImage],
   },
   icons: {
     icon: [
-      {
-        url: "https://assets.chanhdai.com/images/favicon.ico",
-        sizes: "any",
-      },
-      {
-        url: "https://assets.chanhdai.com/images/favicon.svg",
-        type: "image/svg+xml",
-      },
+      { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
     ],
-    apple: {
-      url: "https://assets.chanhdai.com/images/apple-touch-icon.png",
-      type: "image/png",
-      sizes: "180x180",
-    },
+    apple: [
+      { url: "/favicon.svg", type: "image/svg+xml", sizes: "180x180" },
+    ],
   },
 };
 

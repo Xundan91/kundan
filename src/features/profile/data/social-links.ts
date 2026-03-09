@@ -1,40 +1,29 @@
 import type { SocialLink } from "../types/social-links";
 
+const CDN = "https://cdn.simpleicons.org";
+/** Gray-50 so icon is visible in command menu in both themes. */
+const FALLBACK_COLOR = "737373";
+
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    icon: "https://assets.chanhdai.com/images/link-icons/liquid-glass/linkedin.webp",
+    iconName: "linkedin",
+    icon: `${CDN}/linkedin/${FALLBACK_COLOR}`,
     title: "LinkedIn",
-    description: "ncdai",
-    href: "https://linkedin.com/in/ncdai",
+    description: "Kundan Kumar",
+    href: "https://www.linkedin.com/in/kundan-kumar-4810371b1/",
   },
   {
-    icon: "https://assets.chanhdai.com/images/link-icons/liquid-glass/github.webp",
+    iconName: "github",
+    icon: `${CDN}/github/${FALLBACK_COLOR}`,
     title: "GitHub",
-    description: "ncdai",
-    href: "https://github.com/ncdai",
+    description: "xundan91",
+    href: "https://github.com/xundan91",
   },
   {
-    icon: "https://assets.chanhdai.com/images/link-icons/liquid-glass/x.webp",
+    iconName: "x",
+    icon: `${CDN}/x/${FALLBACK_COLOR}`,
     title: "X (Formerly Twitter)",
-    description: "@iamncdai",
-    href: "https://x.com/iamncdai",
-  },
-  {
-    icon: "https://assets.chanhdai.com/images/link-icons/liquid-glass/dailydotdev.webp",
-    title: "daily.dev",
-    description: "@ncdai",
-    href: "https://app.daily.dev/ncdai",
-  },
-  {
-    icon: "https://assets.chanhdai.com/images/link-icons/liquid-glass/zalo.webp",
-    title: "Zalo",
-    description: "Quaric",
-    href: "https://zalo.me/2353934240045322830",
-  },
-  {
-    icon: "https://assets.chanhdai.com/images/link-icons/liquid-glass/youtube.webp",
-    title: "YouTube",
-    description: "@ncdai",
-    href: "https://www.youtube.com/@ncdai",
+    description: "@kundan_singh91",
+    href: "https://x.com/kundan_singh91",
   },
 ];

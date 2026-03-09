@@ -4,14 +4,14 @@ import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-import { ChanhDaiMark } from "./chanhdai-mark";
+import { KundanMark } from "./kundan-mark";
 
 export function SiteHeaderMark() {
   const pathname = usePathname();
-  return pathname === "/" ? <ChanhDaiMarkMotion /> : <ChanhDaiMark />;
+  return pathname === "/" ? <KundanMarkMotion /> : <KundanMark />;
 }
 
-function ChanhDaiMarkMotion() {
+function KundanMarkMotion() {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
   const distanceRef = useRef(160);
@@ -51,8 +51,8 @@ function ChanhDaiMarkMotion() {
       transition={{ duration: 0.3 }}
     >
       <path
-        d="M192 256H64v-64h128v64ZM448 64H320v128h128v64H256V0h192v64ZM64 192H0V64h64v128ZM512 192h-64V64h64v128ZM192 64H64V0h128v64Z"
         fill="currentColor"
+        d="M 96 0 L 136 0 L 136 128 L 216 0 L 256 0 L 176 128 L 256 256 L 216 256 L 136 128 Z M 256 0 L 296 0 L 296 128 L 376 0 L 416 0 L 336 128 L 416 256 L 376 256 L 296 128 Z"
       />
     </motion.svg>
   );

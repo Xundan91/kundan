@@ -1,61 +1,60 @@
 import type { User } from "@/features/profile/types/user";
 
 export const USER: User = {
-  firstName: "Chánh Đại",
-  lastName: "Nguyễn",
-  displayName: "Chánh Đại",
-  username: "ncdai",
+  firstName: "Kundan",
+  lastName: "Kumar",
+  displayName: "Kundan Kumar",
+  username: "kundankumar",
   gender: "male",
   pronouns: "he/him",
-  bio: "Creating with code. Small details matter.",
+  bio: "Full Stack Developer. Building with Next.js, React, and modern web technologies.",
   flipSentences: [
-    "Creating with code. Small details matter.",
-    "Design Engineer",
-    "Open Source Contributor",
+    "Full Stack Developer. Building with Next.js and React.",
+    "Developer @ Palisadoes Foundation",
+    "Founder @ DNSdaddy",
   ],
-  address: "Ho Chi Minh City, Viet Nam",
-  phoneNumber: "Kzg0Nzc3ODg4MTQ4", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  email: "ZGFpQGNoYW5oZGFpLmNvbQ==", // base64 encoded
-  website: "https://chanhdai.com",
-  jobTitle: "Design Engineer",
+  address: "Chandigarh, India",
+  phoneNumber: "KzkxODgwOTIyNDUzMQ==", // E.164 base64: +918809224531
+  email: "a3VuZGFuc2luZ2gwMjMyMzBAZ21haWwuY29t", // base64: kundansingh023230@gmail.com
+  website: "https://kundan.vercel.app",
+  jobTitle: "Developer",
   jobs: [
     {
-      title: "Senior Frontend Developer & UI Design Lead",
-      company: "Simplamo",
-      website: "https://simplamo.com?ref=IN-926722",
+      title: "Developer",
+      company: "Palisadoes Foundation",
+      website: "https://www.palisadoes.org/",
     },
     {
       title: "Founder",
-      company: "Quaric",
-      website: "https://quaric.com",
+      company: "DNSdaddy",
+      website: "https://dnsdaddy.in",
     },
   ],
-  about: `
-Hello, World! I am Chánh Đại — a Design Engineer passionate about creating high-performance, user-centric software solutions with intuitive and engaging designs.
+  about: `Hello! I'm Kundan Kumar — a Full Stack Developer from Chandigarh, India, passionate about building scalable web applications and developer tools.
 
-With 5+ years of experience, I specialize in building high-quality web and mobile applications using Next.js, React, TypeScript, and modern front-end technologies. Beyond work, I love exploring new technologies and turning ideas into reality through personal projects.
+I'm currently a Software Engineer at AfterQuery (YC backed), contributing to a Y Combinator–backed AI research lab that builds high-quality human-generated datasets used to evaluate and stress-test advanced AI systems. I design multi-step command-line engineering tasks that simulate real-world development workflows, including debugging, refactoring, and build automation, and build reproducible, containerized environments using Docker.
 
-One of my key projects, [ZaDark](https://zadark.com), launched in 2022, enhances the Zalo experience on PC and Web, surpassing 80k+ downloads on [SourceForge](https://sourceforge.net/projects/zadark) and reaching 20k+ active users on the [Chrome Web Store](https://chromewebstore.google.com/detail/llfhpkkeljlgnjgkholeppfnepmjppob) (as of Sep 2025).
+I've also worked as a Full Stack Developer at Palisadoes Foundation (GSOC), where I developed and maintained modern, high-performance web applications using Next.js with server-side rendering and API routes, and integrated Redis for caching, session management, and real-time updates.
 
-I'm also the creator of [React Wheel Picker](https://react-wheel-picker.chanhdai.com) — iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support. It has earned 4k+ weekly downloads on [npm](https://www.npmjs.com/package/@ncdai/react-wheel-picker) and was selected for [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker) summer 2025 cohort.
+I'm the founder of **DNSdaddy** — India's first Subdomain Marketplace for Hackers and Builders. I engineered a scalable subdomain marketplace using Next.js (App Router) with SSR, integrated Vercel, Netlify, and Hostinger APIs for automated domain mapping, and used Drizzle ORM with PostgreSQL and Redis. The platform is currently powering 50+ domain listings and 1000+ active users, with CI/CD via GitHub Actions, Docker, and Kubernetes.
 
-Let's connect and collaborate!
-  `,
-  avatar: "https://assets.chanhdai.com/images/chanhdai-avatar-ghibli.webp",
-  ogImage:
-    "https://assets.chanhdai.com/images/screenshot-og-image-light.png?t=1755355653",
-  namePronunciationUrl: "https://assets.chanhdai.com/audio/chanhdai.mp3",
+I've built **TweetXAgent** — an AI-powered viral tweet generator and engagement booster — with a multi-model AI pipeline using LLMs (OpenAI, Claude, Gemini, DeepSeek), a tiered subscription model with Razorpay, and an intuitive UI.
+
+I'm pursuing a B.E. in Computer Science at Chandigarh University (2022–2026) and have achieved Top 5 in IIT Delhi Xtream Hackathon 2023, Top 5 in HackWars at Chandigarh University 2023, and 2nd Position in PEC Chandigarh Hackathon 2022. I've also published an npm package with 1K+ downloads.
+
+Let's connect!`,
+  avatar: "/avatar.svg",
+  ogImage: "/avatar.jpg",
+  namePronunciationUrl: "",
   keywords: [
-    "ncdai",
-    "nguyenchanhdai",
-    "nguyen chanh dai",
-    "chanhdai",
-    "chanh dai",
-    "iamncdai",
-    "quaric",
-    "zadark",
-    "nguyễn chánh đại",
-    "chánh đại",
+    "kundan kumar",
+    "kundan",
+    "dnsdaddy",
+    "palisadoes",
+    "afterquery",
+    "full stack developer",
+    "chandigarh",
+    "india",
   ],
-  dateCreated: "2023-10-20", // YYYY-MM-DD
+  dateCreated: "2023-10-20",
 };

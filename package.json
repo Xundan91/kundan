@@ -1,24 +1,24 @@
 {
-  "name": "chanhdai.com",
+  "name": "kundan.com",
   "version": "0.1.0",
   "description": "A minimal portfolio, component registry, and blog.",
-  "homepage": "https://chanhdai.com",
+  "homepage": "https://kundan.com",
   "license": "MIT",
   "author": {
     "name": "Nguyen Chanh Dai",
-    "email": "dai@chanhdai.com",
+    "email": "dai@kundan.com",
     "url": "https://github.com/ncdai"
   },
   "contributors": [
     {
       "name": "Nguyen Chanh Dai",
-      "email": "dai@chanhdai.com",
+      "email": "dai@kundan.com",
       "url": "https://github.com/ncdai"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ncdai/chanhdai.com.git"
+    "url": "git+https://github.com/ncdai/kundan.com.git"
   },
   "scripts": {
     "dev": "next dev -p 1408 --turbopack",

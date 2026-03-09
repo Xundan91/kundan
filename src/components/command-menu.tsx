@@ -6,19 +6,14 @@ import {
   BriefcaseBusinessIcon,
   CircleUserIcon,
   CornerDownLeftIcon,
-  DownloadIcon,
   LetterTextIcon,
   MoonStarIcon,
-  RssIcon,
   SunIcon,
-  TextIcon,
-  TriangleDashedIcon,
-  TypeIcon,
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
 
 import {
@@ -35,9 +30,8 @@ import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
 import { cn } from "@/lib/utils";
 import { copyText } from "@/utils/copy";
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark";
-import { getWordmarkSVG } from "./chanhdai-wordmark";
 import { Icons } from "./icons";
+import { KundanMark } from "./kundan-mark";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 
@@ -53,19 +47,9 @@ type CommandLinkItem = {
 
 const MENU_LINKS: CommandLinkItem[] = [
   {
-    title: "Daifolio",
+    title: "Portfolio",
     href: "/",
-    icon: ChanhDaiMark,
-  },
-  {
-    title: "Blog",
-    href: "/blog",
-    icon: RssIcon,
-  },
-  {
-    title: "Components",
-    href: "/components",
-    icon: Icons.react,
+    icon: KundanMark,
   },
 ];
 
@@ -91,11 +75,6 @@ const DAIFOLIO_LINKS: CommandLinkItem[] = [
     icon: Icons.project,
   },
   {
-    title: "Honors & Awards",
-    href: "/#awards",
-    icon: Icons.award,
-  },
-  {
     title: "Certifications",
     href: "/#certs",
     icon: Icons.certificate,
@@ -114,7 +93,8 @@ const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
   openInNewTab: true,
 }));
 
-export function CommandMenu({ posts }: { posts: Post[] }) {
+export function CommandMenu({ posts = [] }: { posts?: Post[] }) {
+  void posts; // kept for API compatibility; blog/components links removed from nav
   const router = useRouter();
 
   const { setTheme, resolvedTheme } = useTheme();
@@ -175,18 +155,6 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
     [setTheme]
   );
 
-  const { blogLinks, componentLinks } = useMemo(
-    () => ({
-      blogLinks: posts
-        .filter((post) => post.metadata?.category !== "components")
-        .map(postToCommandLinkItem),
-      componentLinks: posts
-        .filter((post) => post.metadata?.category === "components")
-        .map(postToCommandLinkItem),
-    }),
-    [posts]
-  );
-
   return (
     <>
       <Button
@@ -238,26 +206,8 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
           <CommandSeparator />
 
           <CommandLinkGroup
-            heading="Daifolio"
+            heading="Portfolio"
             links={DAIFOLIO_LINKS}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandSeparator />
-
-          <CommandLinkGroup
-            heading="Blog"
-            links={blogLinks}
-            fallbackIcon={TextIcon}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandSeparator />
-
-          <CommandLinkGroup
-            heading="Components"
-            links={componentLinks}
-            fallbackIcon={Icons.react}
             onLinkSelect={handleOpenLink}
           />
 
@@ -268,48 +218,6 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
             links={SOCIAL_LINK_ITEMS}
             onLinkSelect={handleOpenLink}
           />
-
-          <CommandSeparator />
-
-          <CommandGroup heading="Brand Assets">
-            <CommandItem
-              onSelect={() => {
-                handleCopyText(
-                  getMarkSVG(resolvedTheme === "light" ? "#000" : "#fff"),
-                  "Copied Mark as SVG"
-                );
-              }}
-            >
-              <ChanhDaiMark />
-              Copy Mark as SVG
-            </CommandItem>
-
-            <CommandItem
-              onSelect={() => {
-                handleCopyText(
-                  getWordmarkSVG(resolvedTheme === "light" ? "#000" : "#fff"),
-                  "Copied Logotype as SVG"
-                );
-              }}
-            >
-              <TypeIcon />
-              Copy Logotype as SVG
-            </CommandItem>
-
-            <CommandItem
-              onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
-            >
-              <TriangleDashedIcon />
-              Brand Guidelines
-            </CommandItem>
-
-            <CommandItem asChild>
-              <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>
-                <DownloadIcon />
-                Download Brand Assets
-              </a>
-            </CommandItem>
-          </CommandGroup>
 
           <CommandSeparator />
 
@@ -404,16 +312,6 @@ function buildCommandMetaMap() {
   commandMetaMap.set("Dark", { commandKind: "command" });
   commandMetaMap.set("Auto", { commandKind: "command" });
 
-  commandMetaMap.set("Copy Mark as SVG", {
-    commandKind: "command",
-  });
-  commandMetaMap.set("Copy Logotype as SVG", {
-    commandKind: "command",
-  });
-  commandMetaMap.set("Download Brand Assets", {
-    commandKind: "command",
-  });
-
   SOCIAL_LINK_ITEMS.forEach((item) => {
     commandMetaMap.set(item.title, {
       commandKind: "link",
@@ -441,7 +339,7 @@ function CommandMenuFooter() {
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 border-t bg-zinc-100/30 px-4 text-xs font-medium dark:bg-zinc-800/30">
-        <ChanhDaiMark className="size-6 text-muted-foreground" aria-hidden />
+        <KundanMark className="size-6 text-muted-foreground" aria-hidden />
 
         <div className="flex shrink-0 items-center gap-2">
           <span>{ENTER_ACTION_LABELS[selectedCommandKind]}</span>
@@ -470,14 +368,4 @@ function CommandMenuKbd({ className, ...props }: React.ComponentProps<"kbd">) {
       {...props}
     />
   );
-}
-
-function postToCommandLinkItem(post: Post): CommandLinkItem {
-  const isComponent = post.metadata?.category === "components";
-
-  return {
-    title: post.metadata.title,
-    href: isComponent ? `/components/${post.slug}` : `/blog/${post.slug}`,
-    keywords: isComponent ? ["component"] : undefined,
-  };
 }
